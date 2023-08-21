@@ -1,6 +1,6 @@
 <?php
  
-require_once('./server.php');
+require_once('c://xampp/htdocs/proyectobd/config/server.php');
 
 class Database{
     private $server = "localhost";
@@ -20,8 +20,6 @@ class Database{
         try{
             $PDO = new PDO("mysql:host=".$this->server.";dbname=".$this->dbname,$this->username,$this->password);
             if($PDO != null){
-                echo "Existe Conexión";
-                echo "\n";
                 return $PDO; 
             }
         }
@@ -32,8 +30,6 @@ class Database{
 
 }
 
-$objDB = new Database();
-print_r($objDB->conexion());
 
 
 
